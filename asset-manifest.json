@@ -1,14 +1,14 @@
 {
   "files": {
     "main.css": "/NewsUp-NewsApplication/static/css/main.31d6cfe0.css",
-    "main.js": "/NewsUp-NewsApplication/static/js/main.c35f5609.js",
+    "main.js": "/NewsUp-NewsApplication/static/js/main.40e15a91.js",
     "static/js/787.4c026eef.chunk.js": "/NewsUp-NewsApplication/static/js/787.4c026eef.chunk.js",
     "index.html": "/NewsUp-NewsApplication/index.html",
-    "main.c35f5609.js.map": "/NewsUp-NewsApplication/static/js/main.c35f5609.js.map",
+    "main.40e15a91.js.map": "/NewsUp-NewsApplication/static/js/main.40e15a91.js.map",
     "787.4c026eef.chunk.js.map": "/NewsUp-NewsApplication/static/js/787.4c026eef.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.31d6cfe0.css",
-    "static/js/main.c35f5609.js"
+    "static/js/main.40e15a91.js"
   ]
 }
