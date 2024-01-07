@@ -36,7 +36,7 @@ export class News extends Component {
 
   async updateNews(){
     this.props.setProgress(10);
-    const url = `https://newsapi.org/v2/top-headlines?country=${this.props.country}&category=${this.props.category}&apiKey=b48bc254756344d085cb3e13cff818da&page=${this.state.page}&pageSize=${this.props.pageSize}`;
+    const url = `https://newsapi.org/v2/top-headlines?country=${this.props.country}&category=${this.props.category}&apiKey=f5a053e72db24489853e79e2c7f5e745&page=${this.state.page}&pageSize=${this.props.pageSize}`;
 
     this.setState({loading:true});
     let data = await fetch(url);
@@ -59,12 +59,13 @@ export class News extends Component {
 
  fetchMoreData = async () => {
    this.setState({page: this.state.page + 1});
-   const url = `https://newsapi.org/v2/top-headlines?country=${this.props.country}&category=${this.props.category}&apiKey=b48bc254756344d085cb3e13cff818da&page=${this.state.page}&pageSize=${this.props.pageSize}`;
+   const url = `https://newsapi.org/v2/top-headlines?country=${this.props.country}&category=${this.props.category}&apiKey=f5a053e72db24489853e79e2c7f5e745&page=${this.state.page}&pageSize=${this.props.pageSize}`;
    let data = await fetch(url);
    let parsedData = await data.json();
    this.setState({
       articles:this.state.articles.concat( parsedData.articles),
       totalResults:parsedData.totalResults,
+      // loading:false
      
      })
   };
@@ -74,16 +75,17 @@ export class News extends Component {
     return (
      <>
         <h1 className="text-center" style = {{margin:'30px 0px', marginTop:'90px'}}>NewsUp - Top {this.capitalizeFirstLetter(this.props.category)} Headlines</h1>
-        {this.state.loading && <Spinner />}
+        {this.state.loading && <Spinner/>}
 
-        <InfiniteScroll
+         <InfiniteScroll
           dataLength={this.state.articles.length}
           next={this.fetchMoreData}
-          hasMore={this.state.articles.length !== this.totalResults}
-          // loader={<Spinner/>}
+          hasMore={this.state.articles.length < this.state.totalResults}
+          loader={<Spinner/>}
+          
 
-        >
-
+        > 
+  
         <div className="container">
         <div className="row">
 
